@@ -21,8 +21,7 @@ const quotes = [
     source: `Aragorn, King of Gondor`,
     citation: `J.R.R. Tolkien, The Return of the King`,
     year: 1955,
-    category: "Fantasy"
-    
+    category: "Fantasy" 
 },
 {   quote: `You don't get to choose not to pay a price, you only get to choose which price you pay.`,
     source: `Jordan B. Peterson`,
@@ -41,7 +40,7 @@ function getRandomQuote( quotes ) {
 console.log(getRandomQuote( quotes ));
 
 //random background color generator to be called in the printQuote function below-- color spectrum limited to ensure white text is readable
-function random_bg_color() {
+function randomBackgroundColor() {
     let r = Math.floor(Math.random() * 195);
     let g = Math.floor(Math.random() * 195);
     let b = Math.floor(Math.random() * 195);
@@ -80,7 +79,7 @@ function random_bg_color() {
 
         document.getElementById('quote-box').innerHTML = stringOfQuoteProperties; 
         //random color for random quote
-        random_bg_color(); 
+        randomBackgroundColor(); 
  } 
  
 
