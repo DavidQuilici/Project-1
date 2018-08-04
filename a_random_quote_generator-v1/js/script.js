@@ -4,13 +4,12 @@
 const quotes = [
 {   quote: `Do or do not, there is not try.`,
     source: `Yoda, Jedi Master`,
-    citation: `George Lucas, Star Wars: The Empire Strikes Back.`,
+    citation: `George Lucas, Star Wars: The Empire Strikes Back`,
     year: 1980 
 },
 {   quote: `Love your neighbor as yourself.`,
     source: `Jesus of Nazareth`,
     citation: `Matthew 19:19b`,
-    year: `1st Century AD`
 },
 {   quote: `My bed is a magical place where I suddenly remember everything I forgot to do.`,
     source: `Anonymous`,
@@ -42,10 +41,20 @@ console.log(getRandomQuote( quotes ));
     let stringOfQuoteProperties = `
         <p class="quote"> ${randomQuote.quote} </p>
         <p class="source"> ${randomQuote.source}
+        `;
+     //Conditional statement prints only if object contains citation and year values.
+    if  (randomQuote.citation !== undefined && randomQuote.year !== undefined)  {
+        stringOfQuoteProperties += `
         <span class="citation"> ${randomQuote.citation} </span>
         <span class="year"> ${randomQuote.year} </span>
-        </p>
         `;
+    } else if (randomQuote.year !== undefined){  //conditional statement print only if year 
+    stringOfQuoteProperties += `
+    <span class="year"> ${randomQuote.year} </span>
+    `;
+    }
+        stringOfQuoteProperties += `</p>` // closing tag for the source, citation, year tags.
+
         document.getElementById('quote-box').innerHTML = stringOfQuoteProperties;
  } 
  
