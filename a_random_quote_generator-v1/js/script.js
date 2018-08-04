@@ -37,15 +37,15 @@ console.log(getRandomQuote( quotes ));
 
 
 // returns the randomQuote function into a string and prints it to the HTML document.
- function printQuote( randomQuote ) {
+ function printQuote( ) {
+    let randomQuote = getRandomQuote(quotes);
     let stringOfQuoteProperties = `
         <p class="quote"> ${randomQuote.quote} </p>
-        <p class="source"> ${randomQuote.quote}
+        <p class="source"> ${randomQuote.source}
         <span class="citation"> ${randomQuote.citation} </span>
         <span class="year"> ${randomQuote.year} </span>
         </p>
         `;
-        return stringOfQuoteProperties;
         document.getElementById('quote-box').innerHTML = stringOfQuoteProperties;
  } 
  
@@ -53,3 +53,4 @@ console.log(getRandomQuote( quotes ));
 // This event listener will respond to "Show another quote" button clicks
 // when user clicks anywhere on the button, the "printQuote" function is called
 document.getElementById(`loadQuote`).addEventListener(`click`, printQuote, false);
+
