@@ -42,20 +42,20 @@ console.log(getRandomQuote( quotes ));
         <p class="quote"> ${randomQuote.quote} </p>
         <p class="source"> ${randomQuote.source}
         `;
-     //Conditional statement prints only if object contains citation and year values.
-    if  (randomQuote.citation !== undefined && randomQuote.year !== undefined)  {
+     //Prints only if object contains citation value.
+    if  (randomQuote.citation)  {
         stringOfQuoteProperties += `
         <span class="citation"> ${randomQuote.citation} </span>
-        <span class="year"> ${randomQuote.year} </span>
         `;
-    } else if (randomQuote.year !== undefined){  //conditional statement print only if year 
+    } 
+     if (randomQuote.year){  //Prints only if year 
     stringOfQuoteProperties += `
     <span class="year"> ${randomQuote.year} </span>
     `;
     }
-        stringOfQuoteProperties += `</p>` // closing tag for the source, citation, year tags.
+        stringOfQuoteProperties += `</p>`; // closing tag for source, citation and year.
 
-        document.getElementById('quote-box').innerHTML = stringOfQuoteProperties;
+        document.getElementById('quote-box').innerHTML = stringOfQuoteProperties; 
  } 
  
 
